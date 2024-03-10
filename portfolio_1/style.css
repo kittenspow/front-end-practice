@@ -1,0 +1,51 @@
+nav {
+    font-size: 18px;
+}
+
+.jumbotron {
+    padding-top: 10rem;
+    color: white;
+    background-color: #1e1e66;
+}
+
+.jumbotron h1 {
+    padding: 50px;
+}
+
+.jumbotron img {
+    max-width: 70%;
+}
+
+#Projects {
+    background-color: #1e1e66;
+    color: white;
+}
+
+.card {
+    margin: 5px 2rem;
+}
+
+.card:hover {
+    transform: scale(1.07);
+    transition: all 0.2s ease-in-out;
+}
+
+#Contact {
+    font-size: 20px;
+    padding-bottom: 80px;
+}
+
+footer {
+    padding-bottom: 40px;
+    font-size: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    color: #404099;
+    
+}
