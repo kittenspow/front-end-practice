@@ -9,11 +9,23 @@ nav {
 }
 
 .jumbotron h1 {
-    padding: 50px;
+    /* font-family: ; */
+    padding: 90px;
+    /* font-weight: bold; */
 }
 
 .jumbotron img {
     max-width: 70%;
+    box-shadow: 0 0 50px 15px #404fc0;
+    transition: all 0.4s ease-in-out;
+}
+
+.jumbotron img:hover {
+    box-shadow: 0 0 50px 25px #525fc4;
+}
+
+#About {
+    margin-top: 50px;
 }
 
 #Projects {
@@ -21,18 +33,82 @@ nav {
     color: white;
 }
 
+#Projects h2 {
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
 .card {
     margin: 5px 2rem;
+    transition: all 0.6s ease-in-out;
+}
+
+.card-body {
+    text-decoration: none;
 }
 
 .card:hover {
-    transform: scale(1.07);
-    transition: all 0.2s ease-in-out;
+    transform: scale(1.03);
+    box-shadow: 0 0 50px 8px #4d5ccd;
+}
+
+#Skills {
+    padding-top: 200px;
+    background-color: #1e1e66
+}
+
+#Skills .container {
+    padding-bottom: 200px;
+    padding: 0 80px;
+}
+
+#Skills .col-md-3 {
+    margin: 5px 2rem;
+    border: 10px;
+    background-color: white;
+    /* border: 2px solid red; */
+    border-radius: 20px;
+    transition: all 0.6s ease-in-out;
+}
+
+#Skills .col-md-3:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 50px 8px #4d5ccd;
+}
+
+#Skills h2 {
+    margin-bottom: 40px;
+    color: white;
+}
+
+#Skills .col-md-3 img {
+    max-width: 30%;
+    padding: 50px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+#Skills .col-md-3 img:hover {
+    transform: scale(1.09);
+}
+
+#Skills p {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 120px;
 }
 
 #Contact {
     font-size: 20px;
     padding-bottom: 80px;
+}
+
+#Contact button {
+    background-color: #1e1e66;
+    color: white;
+}
+
+#Contact button:hover {
+    background-color: #3d3daa;
 }
 
 footer {
