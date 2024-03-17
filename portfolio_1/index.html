@@ -78,7 +78,7 @@
             <div class="row">
                 <div class="col-md-4 mb-5">
                     <div class="card">
-                        <a href="https://github.com/kittenspow/front-end-practice/tree/main/hi_name" target="_blank"><img src="img/hi-name.png" class="card-img-top" alt="hi-name"></a>
+                        <a href="https://github.com/kittenspow/front-end-practice/tree/main/hi_name" target="_blank"><img src="/img/hi-name.png" class="card-img-top" alt="hi-name"></a>
                         <div class="card-body">
                             <h4>hi-name</h4>
                           <p class="card-text">a silly website to say hi. Built with html, css, and a little bit of javascript.</p>
@@ -88,16 +88,16 @@
                 <div class="col-md-4 mb-5">
                     <div class="card">
                       <a href="https://github.com/kittenspow/front-end-practice/tree/main/wings_landing%20page" target="_blank">
-                        <img src="img/wings.png" class="card-img-top" alt="wings"> </a>
+                        <img src="/img/wings.png" class="card-img-top" alt="wings"> </a>
                         <div class="card-body">
                           <h4>wings landing page</h4>
-                          <p class="card-text">I don't know what 'wings' is, but there you go</p>
+                          <p class="card-text">I have no idea what 'wings' is, but there you go</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
                     <div class="card">
-                        <a href="https://github.com/kittenspow/front-end-practice/tree/main/portfolio_1" target="_blank"><img src="img/hamster.jpeg" class="card-img-top" alt="idk"></a>
+                        <a href="https://github.com/kittenspow/front-end-practice/tree/main/portfolio_1" target="_blank"><img src="/img/hamster.jpeg" class="card-img-top" alt="idk"></a>
                         <div class="card-body">
                             <h4>this website</h4>
                           <p class="card-text">Does this website count? pls pls pls pls pls pls pls pls pls pls pls pls</p>
@@ -149,25 +149,40 @@
             <div class="row text-center">
                 <div class="col mb-3">
                     <h2>Contact Me</h2>
-                    <p>no this doesn't work (yet) haha</p>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form>
+
+                  <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                    <strong>Thank you!</strong> I have received your message.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+
+                  <div class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+                    <strong>Error!</strong> I'm sorry, try again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+
+                    <form name="submit-to-google-sheet">
                         <div class="mb-3">
                           <label for="name" class="form-label">Name</label>
-                          <input type="text" class="form-control" id="name" aria-describedby="name">
+                          <input type="text" class="form-control" id="name" aria-describedby="name" name="name">
                         </div>
                         <div class="mb-3">
                           <label for="email" class="form-label">Email address</label>
-                          <input type="email" class="form-control" id="email" aria-describedby="email">
+                          <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
+                            <textarea class="form-control" id="message" rows="3" name="message"></textarea>
                         </div>
-                        <button type="submit" class="btn">Submit</button>
+                        <button type="submit" class="btn btn-kirim">Submit</button>
+
+                        <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                          <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                          <span role="status">Loading...</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -182,5 +197,34 @@
     <!-- Akhir Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwTVLoSpw_A2nVMNiWuh279CrKLJvXqXFHWQNCa3wcnejCJdrA24bhN0OguWM9-vuiL/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.alert-success');
+      const alertFailed = document.querySelector('.alert-danger');
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // ketika tombol submit diklik
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            myAlert.classList.toggle('d-none');
+            form.reset();
+            console.log('Success!', response) ;
+          })
+          .catch(error => {
+            alertFailed.classList.toggle('d-none');
+            console.error('Error!', error.message);
+          })
+       });
+    </script>
   </body>
 </html>
