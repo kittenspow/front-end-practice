@@ -1,0 +1,188 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(26, 26, 30);
+    color: white;
+}
+
+nav .navbar-brand {
+    padding: 15px 10px;
+}
+
+nav img {
+    width: min(40px, 10%);
+}
+
+.jumbotron {
+    height: 300px;
+}
+
+.jumbotron h1 {
+    font-weight: bold;
+}
+
+@media (min-width: 1000px) {
+    .jumbotron h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 999.99px) {
+    .jumbotron h1 {
+        font-size: 29px;
+    }
+}
+
+.jumbotron small{
+    color: #ff6a17;
+}
+
+.bird {
+    width: min(650px, 90%);
+    transition: all 1s ease-in-out;
+}
+
+.bird:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 1000px) {
+    #about {
+      font-size: 20px;
+      padding: 110px 10% 150px 10%;
+    }
+}
+ 
+@media (max-width: 999.99px) {
+    #about {
+      font-size: 12px;
+      padding: 60px 10% 50px 10%;
+    }
+}
+
+#features .container {
+    background-color: rgb(32, 32, 39);
+    border-radius: 17px;
+    padding: 35px;
+    width: 75%;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    transition: all 0.6s ease-in-out;
+}
+
+#features .container .col {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#features .container:hover {
+    background-color: rgb(35, 35, 43);
+    transform: scale(1.02);
+}
+
+#features h3 {
+    color: #ff6a17;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1000px) {
+    #plan .container {
+        width: 900px;
+    }
+}
+
+@media (max-width: 999.99px) {
+    #plan .container {
+        width: 70%;
+    }
+}
+
+#plan {
+    margin-bottom: 100px;
+}
+
+#plan .container .col {
+    background-color: rgb(32, 32, 39);;
+    margin: 10px 1px;
+    border-radius: 17px;
+    height: 380px;
+    padding: 30px;
+    padding-top: 40px;
+    transition: all 0.4s ease-in-out;
+}
+
+#plan .container .col:hover {
+    background-color: rgb(41, 41, 50);
+    transform: scale(1.05);
+}
+
+#plan .pricing {
+    margin-top: 10px;
+    display: flex;
+}
+
+#plan .pricing p {
+    margin-left: 5px;
+    align-self: flex-end;
+    color: rgb(135, 135, 135);
+}
+
+#plan .line {
+    border-bottom: 1px solid white;
+    margin: 15px auto;
+}
+
+#plan button {
+    background-color: #ff6a17;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#trial .btn-outline-primary {
+    border: 1px solid #ff6a17;
+    color: #ff6a17;
+}
+
+#trial .btn-outline-primary:hover {
+    background-color: #ff6a17;
+    color: white;
+}
+
+#trial button {
+    border-radius: 10px;
+    margin: 10px 10px;
+}
+
+#trial small {
+    color: #ff6a17;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+#Contact {
+    padding: 170px 0 80px 0;
+}
+
+#Contact button {
+    border-radius: 10px;
+}
+
+#Contact button:hover {
+    border: 1px solid #ff6a17;
+    background-color: #ff6a17;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ff6a17;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: white;
+}
