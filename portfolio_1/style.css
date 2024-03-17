@@ -1,9 +1,5 @@
-nav {
-    font-size: 18px;
-}
-
 .jumbotron {
-    padding-top: 5rem;
+    padding-top: 6rem;
     color: white;
     background-color: #1e1e66;
 }
@@ -15,7 +11,7 @@ nav {
 }
 
 .jumbotron img {
-    max-width: 20%;
+    width: min(250px, 75%);
     box-shadow: 0 0 50px 15px #404fc0;
     transition: all 0.4s ease-in-out;
 }
@@ -26,7 +22,7 @@ nav {
 
 #About {
     margin-top: 50px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 #Projects {
@@ -100,17 +96,17 @@ nav {
 }
 
 #Contact {
-    font-size: 20px;
+    font-size: 15px;
     padding-bottom: 80px;
     background-color: white;
 }
 
-#Contact button {
+#Contact .btn-kirim {
     background-color: #1e1e66;
     color: white;
 }
 
-#Contact button:hover {
+#Contact .btn-kirim:hover {
     background-color: #3d3daa;
 }
 
